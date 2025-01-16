@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  image-app-api:
+    container_name: image-app-api
+    image: image-app-api
+    build: .
+    env_file: ./.env
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+      - ${BACKEND_DEBUG_PORT}:${BACKEND_DEBUG_PORT}
+    environment:
+      - aws.accessKey=${AWS_ACCESS_KEY}
+      - aws.secretKey=${AWS_SECRET_KEY}
+      - aws.region=${AWS_REGION}
+      - aws.s3.bucket=${AWS_S3_BUCKET}
