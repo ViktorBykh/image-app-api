@@ -3,6 +3,9 @@
 ## Overview
 The **Image App API** is a Spring Boot-based RESTful API for managing images stored in AWS S3 and performing label-based image searches using AWS Rekognition. It provides endpoints to upload images, retrieve paginated image lists, and search images based on labels.
 
+## [API LINK](https://image-app-api.onrender.com/swagger-ui/index.html)
+Swagger documentation is provided to describe the structure of the API endpoints.
+
 ## Features
 - **Upload Images**: Upload image files to an AWS S3 bucket.
 - **List Images**: Retrieve paginated lists of images stored in the S3 bucket.
