@@ -70,7 +70,7 @@ public class ImageController {
             int start = Math.min(startIndex, allObjects.size());
             int end = Math.min(start + pageSize, allObjects.size());
             for (int i = start; i < end; i++) {
-                String imageUrl = String.format("https://%s.s3.%s.amazonaws.com/%s", bucketName, region, allObjects.get(i).key());
+                String imageUrl = String.format("https://s3.%s.amazonaws.com/%s/%s", region, bucketName, allObjects.get(i).key());
                 pageImages.add(Map.of("url", imageUrl));
             }
             responseMap.put("images", pageImages);
@@ -144,7 +144,7 @@ public class ImageController {
                     .anyMatch(label -> label.name().equalsIgnoreCase(query));
 
             if (isMatch) {
-                String imageUrl = String.format("https://%s.s3.%s.amazonaws.com/%s", bucketName, region, key);
+                String imageUrl = String.format("https://s3.%s.amazonaws.com/%s/%s", region, bucketName, key);
                 matchedImageUrls.add(Map.of("url", imageUrl));
             }
         } catch (InvalidImageFormatException e) {
